@@ -1,10 +1,12 @@
-# CNN-Pneumonia-Classification
-<h1 align=center><strong>Pneumonia</strong></h1>
+
+# **Download the dataset here!**
+<a href='https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia' > Link to the dataset from Kaggle.com </a>
+# **Pneumonia**
 
 
 ---
 
-<p align='center'><a  href='http://nbviewer.ipython.org/github/M-Borsuk/CNN-Pneumonia-Classification/blob/1d628d4a6f495a8b0eea9e7f707ae85f73a4e279/PneumoniaScansCNN.ipynb' > View the notebook here for better readability </a></p>
+<p align='center'><a  href='http://nbviewer.ipython.org/github/M-Borsuk/CNN-Pneumonia-Classification/blob/1d628d4a6f495a8b0eea9e7f707ae85f73a4e279/PneumoniaScansCNN.ipynb' > View the full notebook here</a></p>
 
 <br>
 <br>
@@ -52,10 +54,21 @@ This information can help your doctor determine what type of pneumonia you have 
 
 
 ---
+# **Results**
+---
 
-<figure align=center>
-  <img src='https://github.com/M-Borsuk/CNN-Pneumonia-Classification/blob/main/newplot.png?raw=true' style='width:100%'>
-  <figcaption align='center'> 
-    ROC AUC Curve
-  </figcaption>
- </figure>
+
+
+
+*   Accuracy of the model: <strong> 86 % </strong>
+*   Precision score of the model : <strong> 88 % </strong>
+*   Recall score of the model: <strong> 90% </strong>
+*   AUC score of the model: <strong> 0,85 </strong>
+
+
+
+
+
+---
+
+![Alt text](https://github.com/M-Borsuk/CNN-Pneumonia-Classification/blob/main/newplot.png?raw=true)
