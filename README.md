@@ -55,6 +55,7 @@ This information can help your doctor determine what type of pneumonia you have 
  
 
 ![Alt text](https://github.com/M-Borsuk/CNN-Pneumonia-Classification/blob/main/SampleImgs.png?raw=true "Sample images from the dataset")
+Sample images from the dataset
 
 
 # **Results**
