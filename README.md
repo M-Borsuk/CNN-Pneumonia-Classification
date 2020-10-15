@@ -54,7 +54,8 @@ This information can help your doctor determine what type of pneumonia you have 
 ---
 
 <figure align=center>
-  <img src='' style='width:100%'>
+  <img src='https://github.com/M-Borsuk/CNN-Pneumonia-Classification/blob/main/newplot.png?raw=true' style='width:100%'>
   <figcaption align='center'> 
+    ROC AUC Curve
   </figcaption>
  </figure>
