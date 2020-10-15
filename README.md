@@ -1,6 +1,7 @@
 
 # **Download the dataset here!**
 <a href='https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia' > Link to the dataset from Kaggle.com </a>
+
 # **Pneumonia**
 
 
@@ -55,7 +56,7 @@ This information can help your doctor determine what type of pneumonia you have 
  
 
 ![Alt text](https://github.com/M-Borsuk/CNN-Pneumonia-Classification/blob/main/SampleImgs.png?raw=true "Sample images from the dataset")
-Sample images from the dataset
+Picture 4. Sample images from the dataset
 
 
 # **Results**
