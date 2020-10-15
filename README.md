@@ -4,7 +4,7 @@
 # **Pneumonia**
 
 
----
+
 
 <p align='center'><a  href='http://nbviewer.ipython.org/github/M-Borsuk/CNN-Pneumonia-Classification/blob/1d628d4a6f495a8b0eea9e7f707ae85f73a4e279/PneumoniaScansCNN.ipynb' > View the full notebook here</a></p>
 
@@ -19,7 +19,7 @@
 <br>
 
 
----
+
 
 
 <p align='center'> As we can read from <a href='https://en.wikipedia.org/wiki/Pneumonia'> Wikipedia</a> , <strong> pneumonia </strong> is a an inflammatory condition of the lung primarily affecting the small air sacs known as alveoli. [Picture 1.]</p>
@@ -35,7 +35,7 @@ This information can help your doctor determine what type of pneumonia you have 
 </p>
 
 
----
+
 
 
 <br>
@@ -51,11 +51,13 @@ This information can help your doctor determine what type of pneumonia you have 
  </figure>
  <br>
  <br>
+ 
+ 
+
+![Alt text](https://github.com/M-Borsuk/CNN-Pneumonia-Classification/blob/main/SampleImgs.png?raw=true "Sample images from the dataset")
 
 
----
 # **Results**
----
 
 
 
@@ -68,7 +70,5 @@ This information can help your doctor determine what type of pneumonia you have 
 
 
 
-
----
-
+![Alt text](https://github.com/M-Borsuk/CNN-Pneumonia-Classification/blob/main/cm.png?raw=true)
 ![Alt text](https://github.com/M-Borsuk/CNN-Pneumonia-Classification/blob/main/newplot.png?raw=true)
