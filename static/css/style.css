@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: antiquewhite;
+    color: #333;
+    line-height: 1.5;
+}
+ul {
+    list-style: none;
+
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+h1,h2,h3 {
+    font-weight: 400;
+    line-height: 1.2;
+}
+p {
+    margin: 10px 0;
+}
+img {
+    width: 100%;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+    color: antiquewhite;
+    opacity: 0.7;
+    width: 100%;
+    height: 69px;
+    position: fixed;
+    top: 0px;
+    padding: 0 30px;
+}
+.navbar a {
+    color: antiquewhite;
+    padding: 0 15px;
+}
+.navbar ul {
+    display: flex;
+}
+.navbar a:hover {
+    border-bottom:  rgb(47, 243, 40) 9px solid;
+}
+
+.hero {
+    background-image: url("jetbrains://pycharm/navigate/reference?project=PneumoniaCNN&path=static/img/pneumonia.jpg");
+    height: 100%;
+    position: relative;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: antiquewhite;
+    height: 100%;
+
+}
+.hero .content h1 {
+    font-weight: 900;
+    font-size: 55px;
+}
+.hero .content p {
+    font-size: 30px;
+    font-weight: 800;
+    max-width: 600px;
+    margin: 20px 0 30px;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0, 0, 0.6);
+}
+.hero * {
+    z-index: 5;
+}
+
+.flex-columns .column .column-2 h1 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.flex-columns .column .column-2 h1,
+.flex-columns .column .column-2 h2,
+.flex-columns .column .column-2 p
+ {
+    padding: 25px;
+    text-align: center;
+    
+}
+.flex-columns .column .column-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: rgb(10, 54, 8);
+    color: antiquewhite;
+    height: 100%;
+
+}
+
+
+.flex-columns .column .column-1 img {
+    height: 100%;
+    justify-content: end;
+    object-fit: cover;
+}
+.flex-columns .column .column-2 a {
+    background-color: #333;
+    color: antiquewhite;
+    align-self: center;
+}
+.flex-columns .column .column-2 a:hover {
+    opacity: 0.85;
+}
+
+.flex-columns {
+    height: 100vh;
+    position: relative;
+
+}
+.flex-columns .column .column-2 .p-form h2 {
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+
+}
+#inputBtn {
+    align-self: center;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    padding: 15px 30px;
+    color: antiquewhite;
+    background-color: rgb(10, 54, 8);
+    border-radius: 50px;
+}

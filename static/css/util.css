@@ -1,0 +1,50 @@
+.text-primary {
+    color: rgb(43, 131, 39);
+    font-weight: bolder;
+}
+.text-secondary {
+    color: blue;
+}
+.btn {
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    padding: 15px 30px;
+    color: antiquewhite;
+    background-color: rgb(10, 54, 8);
+    border-radius: 50px;
+}
+.btn:hover {  
+    opacity: 0.85;
+}
+.flex-items {
+    display: flex;
+    text-align: center;
+    justify-self: center;
+    text-align: center;
+    height: 100%;
+    align-items: center;
+}
+.flex-items > div {
+    padding: 20px;
+    flex: 1;
+}
+.flex-columns .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+
+}
+.flex-columns .column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+.flex-columns .column .column-1,
+.flex-columns .column .column-2 {
+    height: 100vh;
+    align-items: center;
+    align-text:center;
+}
