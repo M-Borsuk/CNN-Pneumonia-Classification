@@ -4,7 +4,7 @@ import json
 from tensorflow.keras.models import load_model
 
 app = Flask(__name__)
-model = load_model('models\savedmodel.h5')
+model = load_model('savedmodel.h5')
 @app.route('/')
 def home_page():
  return render_template('index.html')
