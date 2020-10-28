@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Pneumonia Prediction</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="static\css\bootstrap\css\bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="static\css\bootstrap\css\scrolling-nav.css" rel="stylesheet">
+
+  <link href="static\css\bootstrap\css\inp.css" rel="stylesheet">
+
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top" id="mainNav">
+    <div class="container-fluid">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Pneumonia Predictor</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#prediction">Predict now!</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid px-0" id="home">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner bg-secondary" role="listbox">
+            <div class="carousel-item active">
+                <div class="d-flex align-items-center justify-content-center min-vh-100">
+                    <h1 class="display-2 text-center">{% block slide1 %}{% endblock %}</h1>
+
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="d-flex align-items-center justify-content-center min-vh-100">
+                    {% block slide2 %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+
+
+
+
+
+ <section id="prediction" class="bg-secondary">
+    <div class="container min-vh-100 bg-secondary">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2 class="display-3 text-center ">Upload the image</h2>
+          <form action="{{ url_for('predict')}}" method="post" enctype="multipart/form-data">
+            <h2>
+              <label for="img">Select an image:</label>
+            </h2>
+            <h2>
+              <input type="file" id="img" name="file" accept="image/*">
+            </h2>
+              <button type="submit" href="#predict" class="btn btn-dark btn-lg" >Predict now!</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="bg-secondary">
+    <div class="container min-vh-100 bg-secondary">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2 class="display-3 text-center ">About this page</h2>
+          <p class="lead text-center ">This is a great place to talk about your webpage. This template is purposefully unstyled so you can use it as a boilerplate or starting point for you own landing page designs! This template features:</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container bg-dark">
+      <p class="m-0 text-center text-white display-4">Copyright &copy; Your Website 2020</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="static\css\jquery\jquery.min.js"></script>
+
+  <script src="static\css\bootstrap\js\bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="static\css\jquery-easing\jquery.easing.min.js"></script>
+
+  <!-- Custom JavaScript for this theme -->
+  <script src="static\css\bootstrap\js\scrolling-nav.js"></script>
+
+    <script src="static\css\bootstrap\js\inp.js"></script>
+
+
+
+</body>
+
+</html>
