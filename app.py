@@ -20,7 +20,7 @@ matplotlib.use('Agg')
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql+psycopg2://postgres:####@localhost:5432/pneumonia_data"
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql+psycopg2://postgres:######@localhost:5432/pneumonia_data"
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 model = load_model('savedmodel.h5')
@@ -62,7 +62,6 @@ def predict():
     if request.method == 'POST':
         f = request.files['file']
         result = make_prediction(model,f)
-        print(result[2][0][0])
         new_entry = RTGModel(date=datetime.now(),rtg_arr=[float(x[0]) for x in result[2][0][0].tolist()],pred=int(result[1][0][0]))
         db.session.add(new_entry)
         db.session.commit()
