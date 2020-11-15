@@ -7,22 +7,48 @@ import os
 import seaborn as sns
 import matplotlib
 import matplotlib.pyplot as plt
+from PIL import Image
+import numpy as np
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+from sqlalchemy.types import ARRAY,FLOAT
+from datetime import datetime
 
 matplotlib.use('Agg')
 
 
 
+
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql+psycopg2://postgres:####@localhost:5432/pneumonia_data"
+db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 model = load_model('savedmodel.h5')
+
+class RTGModel(db.Model):
+    __tablename__ = 'rtg_data'
+
+    id = db.Column(db.Integer, primary_key=True)
+    date = db.Column(db.DateTime())
+    rtg_arr = db.Column(ARRAY(FLOAT))
+    pred = db.Column(db.Numeric())
+
+    def __init__(self, date, rtg_arr, pred):
+        self.date = date
+        self.rtg_arr = rtg_arr
+        self.pred = pred
+
+    def __repr__(self):
+        return f"<RTG {self.id}>"
 
 
 # model._make_predict_function()
-def make_prediction(model, img_path):
-    img_arr = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
+def make_prediction(model, f):
+    img_arr = np.array(Image.open(f))
     resized_arr = cv2.resize(img_arr, (150, 150))
     resized_arr = resized_arr / 255.
     x = resized_arr.reshape(-1, 150, 150, 1)
-    preds = (model.predict(x),model.predict_classes(x))
+    preds = (model.predict(x),model.predict_classes(x),x)
     return preds
 
 
@@ -35,18 +61,12 @@ def home_page():
 def predict():
     if request.method == 'POST':
         f = request.files['file']
-        file_path = os.path.join('static\\img\\uploaded', f.filename)
-        print(file_path)
-        f.save(file_path)
-        result = make_prediction(model, file_path)
-        print([result[0][0][0]*100,100-(result[0][0][0]*100)])
-        sns.barplot(x=["Pneumonia","Normal"],y=[result[0][0][0]*100,100-(result[0][0][0]*100)])
-        plt.ylabel("Percent of the prediction for each class")
-        plt.title("Prediction [%]")
-        plot_path = os.path.join('static\\img\\uploaded', f.filename + "_plot.png")
-        print(plot_path)
-        plt.savefig(plot_path)
-    return render_template("predict.html", pred="Patient with this RTG does{}suffer from pneumonia".format(" NOT " if result[1][0][0] == 0 else " "), plot = plot_path)
+        result = make_prediction(model,f)
+        print(result[2][0][0])
+        new_entry = RTGModel(date=datetime.now(),rtg_arr=[float(x[0]) for x in result[2][0][0].tolist()],pred=int(result[1][0][0]))
+        db.session.add(new_entry)
+        db.session.commit()
+    return render_template("predict.html", pred="Patient with this RTG does{}suffer from pneumonia".format(" NOT " if result[1][0][0] == 0 else " "), info = "Probability that a patient with this RTG photo suffers from pneumonia: {}%".format(np.round(result[0][0][0]*100,2)))
 
 
 if __name__ == '__main__':
