@@ -1,6 +1,5 @@
 
 from flask import Flask, request, render_template
-
 from tensorflow.keras.models import load_model
 import cv2
 import os
@@ -14,13 +13,8 @@ from flask_migrate import Migrate
 from sqlalchemy.types import ARRAY,FLOAT
 from datetime import datetime
 
-matplotlib.use('Agg')
-
-
-
-
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql+psycopg2://postgres:######@localhost:5432/pneumonia_data"
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('SQLALCHEMY_DATABASE_URI')
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 model = load_model('savedmodel.h5')
@@ -42,7 +36,7 @@ class RTGModel(db.Model):
         return f"<RTG {self.id}>"
 
 
-# model._make_predict_function()
+#model._make_predict_function()
 def make_prediction(model, f):
     img_arr = np.array(Image.open(f))
     resized_arr = cv2.resize(img_arr, (150, 150))

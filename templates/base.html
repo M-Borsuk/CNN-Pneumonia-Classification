@@ -28,14 +28,15 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top" id="mainNav">
     <div class="container-fluid">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Pneumonia Predictor</a>
+        {% block nav1 %}{% endblock %}
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#page-top">Home</a>
+              {% block nav2 %}{% endblock %}
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#prediction">Predict now!</a>
@@ -62,7 +63,7 @@
             </div>
             <div class="carousel-item">
                 <div class="d-flex align-items-center justify-content-center min-vh-100">
-                    <h1 class="display-1 text-center">{% block slide2 %}{% endblock %}</h1>
+                    {% block slide2 %}{% endblock %}
                 </div>
             </div>
         </div>
@@ -97,9 +98,16 @@
                   Predict now!
               </button>
           </form>
+        <div class="d-flex flex-row align-items-center justify-content-center ">
+            <div class="p-2">
+                 <img src="static\img\NORMAL2-IM-0376-0001.jpeg" alt="..." class="img-thumbnail img-fluid " >
+            </div>
+            </div>
         </div>
       </div>
     </div>
+
+
   </section>
 
   <section id="about" class="bg-secondary">
@@ -108,10 +116,10 @@
         <div class="col-lg-8 mx-auto">
           <h2 class="display-2 text-center ">About this project</h2>
           <p class="lead text-center font-weight-bolder ">The goal of this project was to train the convolutional neural network
-              capable of predicting whether the patient suffers from pneumonia based on their chest x-ray photo and creating the web app to allow the prediction on the internet</p>
+              capable of predicting whether the patient suffers from pneumonia based on their chest x-ray photo and creating the web app to allow the prediction through the API</p>
             <div class="d-flex align-items-center justify-content-center">
             <button onclick="location.href='https://nbviewer.jupyter.org/github/M-Borsuk/CNN-Pneumonia-Classification/blob/c398208d881e224a1b7571ef67c14196d7a465c8/PneumoniaScansCNN.ipynb'" class="btn btn-dark btn-lg align-items-center" >
-                  View the notebook with trained the model <i class="fa fa-github"></i>
+                  View the notebook with trained model <i class="fa fa-github"></i>
               </button>
             </div>
         </div>

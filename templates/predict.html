@@ -1,5 +1,10 @@
 {% extends "base.html" %}
-{% block slide1 %}{{ pred }}{% endblock %}
+{% block nav1 %} <a class="navbar-brand js-scroll-trigger" href="{{ url_for('home_page')}}">Pneumonia Predictor</a>{% endblock %}
+{% block nav2 %} <a class="nav-link js-scroll-trigger" href="{{ url_for('home_page')}}">Home</a>{% endblock %}
+{% block slide1 %}<h1 class="display-1 text-center">{{ pred }}</h1>{% endblock %}
 {% block slide2 %}
-{{ info }}
+
+                <h1 class="display-1 text-center">{{ info }}</h1>
+
+
 {% endblock %}
