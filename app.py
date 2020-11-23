@@ -16,8 +16,8 @@ load_dotenv()
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('SQLALCHEMY_DATABASE_URI')
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
-model = load_model('savedmodel.h5')
-os.environ.values()
+model = load_model('C:\\Users\\mtszb\\Desktop\\XRayCNN\\CNN-Pneumonia-Classification\\savedmodel.h5')
+
 class RTGModel(db.Model):
     __tablename__ = 'rtg_data'
 
