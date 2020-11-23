@@ -3,9 +3,7 @@ from flask import Flask, request, render_template
 from tensorflow.keras.models import load_model
 import cv2
 import os
-import seaborn as sns
-import matplotlib
-import matplotlib.pyplot as plt
+from dotenv import load_dotenv
 from PIL import Image
 import numpy as np
 from flask_sqlalchemy import SQLAlchemy
@@ -14,11 +12,12 @@ from sqlalchemy.types import ARRAY,FLOAT
 from datetime import datetime
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('SQLALCHEMY_DATABASE_URI')
+load_dotenv()
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('SQLALCHEMY_DATABASE_URI')
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 model = load_model('savedmodel.h5')
-
+os.environ.values()
 class RTGModel(db.Model):
     __tablename__ = 'rtg_data'
 
