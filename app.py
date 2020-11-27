@@ -58,7 +58,10 @@ def predict():
         new_entry = RTGModel(date=datetime.now(),rtg_arr=[float(x[0]) for x in result[2][0][0].tolist()],pred=int(result[1][0][0]))
         db.session.add(new_entry)
         db.session.commit()
-    return render_template("predict.html", pred="Patient with this RTG does{}suffer from pneumonia".format(" NOT " if result[1][0][0] == 0 else " "), info = "Probability that a patient with this RTG photo suffers from pneumonia: {}%".format(np.round(result[0][0][0]*100,2)))
+    return render_template("predict.html", pred="Patient with this RTG does{}suffer from pneumonia"\
+                           .format(" NOT " if result[1][0][0] == 0 else " "),\
+                           info = "Probability that a patient with this RTG photo suffers from pneumonia: {}%"\
+                           .format(np.round(result[0][0][0]*100,2)))
 
 
 if __name__ == '__main__':
